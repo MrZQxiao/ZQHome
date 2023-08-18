@@ -10,7 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Service_Home : NSObject
-
+- (UIViewController *)func_main:(NSDictionary *)parameter;
 @end
 
 NS_ASSUME_NONNULL_END
