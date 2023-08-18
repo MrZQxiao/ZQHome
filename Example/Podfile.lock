@@ -1,0 +1,16 @@
+PODS:
+  - ZQHome (0.1.0)
+
+DEPENDENCIES:
+  - ZQHome (from `../`)
+
+EXTERNAL SOURCES:
+  ZQHome:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  ZQHome: 3e659045cbc1394103a7ad34003630356b87d214
+
+PODFILE CHECKSUM: 5ee0a58d2fdb67d32e2b882f0cdd6959ae11fa90
+
+COCOAPODS: 1.11.3
