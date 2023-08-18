@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ZQHome'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = '主页组件'
 
 # This description is used to generate tags and improve search results.
@@ -35,7 +35,20 @@ ZQModuleDemo首页组件
   # s.resource_bundles = {
     # 'ZQHome' => ['ZQHome/Assets/*.png']
   # }
-  # s.dependency 'ZQFoundation'
-  
+
+  # ZQHome 模块 UI
+  s.subspec 'Kit' do |ss|
+      ss.source_files = 'ZQHome/Classes/Kit/**/*'
+      ss.dependency 'ZQFoundation'
+      ss.dependency 'ReactiveObjC'
+      ss.dependency 'MJRefresh'
+  end
+
+  # ZQHome 模块 事件Module
+    s.subspec 'Mediator' do |ss|
+        ss.source_files = 'ZQHome/Classes/Mediator/**/*'
+        ss.dependency 'ZQHome/Kit'
+    end
+
   
 end
