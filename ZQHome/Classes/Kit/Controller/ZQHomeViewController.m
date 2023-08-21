@@ -23,13 +23,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"home";
-    self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    self.title = @"首页";
+//    self.navigationController.navigationBarHidden = YES;
+    self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    [self.view addSubview:self.tableView];
     self.tableView.mj_header = [MJRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNew)];
     self.tableView.mj_footer = [MJRefreshFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMore)];
+    [self.view addSubview:self.tableView];
+
 
     self.viewModel = [[ZQHomeViewModel alloc] init];
     [self.tableView.mj_header beginRefreshing];
@@ -47,6 +49,10 @@
         [self.tableView reloadData];
     }];
 
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.viewModel.itemArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

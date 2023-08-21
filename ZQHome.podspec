@@ -51,5 +51,10 @@ ZQModuleDemo首页组件
         ss.dependency 'ZQHome/Kit'
     end
 
+    s.subspec 'Module' do |ss|
+        ss.source_files = 'ZQHome/Classes/Module/**/*'
+        ss.dependency 'ZQRouter/Module'
+    end
+
   
 end
